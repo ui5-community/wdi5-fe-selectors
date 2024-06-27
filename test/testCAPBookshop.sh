@@ -40,8 +40,6 @@ else
 
 fi
 
-#npm add wdio-ui5-service
-
 rm webapp/test/e2e/*.js
 cp ${ROOT_DIR}/test/*.js  webapp/test/e2e
 
