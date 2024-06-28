@@ -8,9 +8,15 @@ describe('samples', () => {
         logger.log('hello world!');
     })
 
-    it('press tile and search', async () => {
-        await lib.pressTile('Browse Books');
-        await lib.searchFor('Catweazle');
+    it('new book', async () => {
+        await lib.pressTile('Manage Books');
+        await lib.performStandardAction('Create');
+        await lib.setFieldValue('Title', 'WDI5');
+        await lib.openValueHelpForField('Author');
+        await lib.chooseRowInValueHelpDialogTable('Items', 1);
+        await lib.performStandardAction('Save');
+        await lib.navigateBack();
+        await lib.searchFor('WDI5');
         await _sleep(2 * 1000)
     })
 
