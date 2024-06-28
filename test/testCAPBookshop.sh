@@ -33,13 +33,10 @@ else
 
   npm init wdi5@latest
 
-  rm webapp/test/e2e/*.test.js
-  ln -s ${ROOT_DIR}/test/CAPBookshop.test.js  webapp/test/e2e
-
 fi
 
 rm webapp/test/e2e/*.js
-cp ${ROOT_DIR}/test/*.js  webapp/test/e2e
+cp ${ROOT_DIR}/test/*.js webapp/test/e2e
 
 PORT=8080 ../node_modules/.bin/cds run &
 CDSPID=$!
