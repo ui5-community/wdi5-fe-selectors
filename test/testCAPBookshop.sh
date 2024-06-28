@@ -31,8 +31,6 @@ else
 
   npm add ${ROOT_DIR} || true
 
-  ln -s ${ROOT_DIR}/test/testCAPBookshop.js .
-
   npm init wdi5@latest
 
   rm webapp/test/e2e/*.test.js
