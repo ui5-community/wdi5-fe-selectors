@@ -8,7 +8,7 @@ describe('samples', () => {
         logger.log('hello world!');
     })
 
-    it('press tile', async () => {
+    it('press tile and search', async () => {
         await lib.pressTile('Browse Books');
         await lib.searchFor('Catweazle');
         await _sleep(2 * 1000)
