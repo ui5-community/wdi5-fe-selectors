@@ -25,7 +25,7 @@ exports.config = {
     ],
     logLevel: "error",
     bail: 0,
-    baseUrl: "http://localhost:8080/index.html",
+    baseUrl: "http://localhost:8080/",
     waitforTimeout: 10000,
     connectionRetryTimeout: process.argv.indexOf("--debug") > -1 ? 1200000 : 120000,
     connectionRetryCount: 3,
