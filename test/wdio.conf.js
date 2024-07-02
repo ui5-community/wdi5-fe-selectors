@@ -1,3 +1,10 @@
+let args = ["--window-size=1920,1080"];
+
+if(process.argv.indexOf("--headless") > -1)
+    args.push("--headless=new");
+if(process.argv.indexOf("--debug") > -1)
+    args.push("--auto-open-devtools-for-tabs");
+
 exports.config = {
     specs: ["./**/*.test.js"],
     exclude: [
@@ -8,14 +15,7 @@ exports.config = {
             maxInstances: 5,
             //
             browserName: "chrome",
-            "goog:chromeOptions": {
-                args:
-                    process.argv.indexOf("--headless") > -1
-                        ? ["--headless=new"]
-                        : process.argv.indexOf("--debug") > -1
-                            ? ["window-size=1440,800", "--auto-open-devtools-for-tabs"]
-                            : ["window-size=1440,800"]
-            },
+            "goog:chromeOptions": { args },
             acceptInsecureCerts: true,
             "wdi5:authentication": {
                 provider: "BasicAuth",
