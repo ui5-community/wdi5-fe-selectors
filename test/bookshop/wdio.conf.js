@@ -1,14 +1,11 @@
-let args = ["--window-size=1920,1080"];
+let args = ["--window-size=1920,1080"]
 
-if(process.argv.indexOf("--headless") > -1)
-    args.push("--headless=new");
-if(process.argv.indexOf("--debug") > -1)
-    args.push("--auto-open-devtools-for-tabs");
+if (process.argv.indexOf("--headless") > -1) args.push("--headless=new")
+if (process.argv.indexOf("--debug") > -1) args.push("--auto-open-devtools-for-tabs")
 
 exports.config = {
     specs: ["./**/*.test.js"],
-    exclude: [
-    ],
+    exclude: [],
     maxInstances: 10,
     capabilities: [
         {
@@ -29,9 +26,7 @@ exports.config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: process.argv.indexOf("--debug") > -1 ? 1200000 : 120000,
     connectionRetryCount: 3,
-    services: [
-        "ui5"
-    ],
+    services: ["ui5"],
     framework: "mocha",
     reporters: ["spec"],
     mochaOpts: {

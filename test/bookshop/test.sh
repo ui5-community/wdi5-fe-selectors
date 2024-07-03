@@ -4,7 +4,7 @@ set -x
 set -e
 
 ROOT_DIR=`pwd`
-WORK_DIR=tmp/testCAPBookshop
+WORK_DIR=tmp/test/bookshop
 
 if [ -d ${WORK_DIR} ]; then
 
@@ -36,7 +36,7 @@ else
 fi
 
 rm webapp/test/e2e/*.js
-cp ${ROOT_DIR}/test/*.js webapp/test/e2e
+cp ${ROOT_DIR}/test/bookshop/*.js webapp/test/e2e
 
 PORT=8080 ../node_modules/.bin/cds run &
 CDSPID=$!

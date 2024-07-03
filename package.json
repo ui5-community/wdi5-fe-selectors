@@ -7,6 +7,20 @@
     "lib"
   ],
   "scripts": {
-    "test": "bash ./test/testCAPBookshop.sh"
+    "test": "bash ./test/bookshop/test.sh",
+    "lint": "npx eslint lib",
+    "pretty": "npx prettier . --check",
+    "beautify": "npx prettier . --write"
+  },
+  "peerDependencies": {
+    "wdio-ui5-service": "^2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "eslint": "^9.6.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "globals": "^15.8.0",
+    "prettier": "^3"
   }
 }
